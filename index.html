@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soodoo | Building the Knowledge Layer for Autonomous Agents</title>
-    <meta name="description" content="Soodoo is a research-driven AI company building tools and infrastructure for the age of autonomous agents. Home of AnswerRank and AM-MQM.">
+    <meta name="description" content="Soodoo is a research-driven AI company building tools and infrastructure for the age of autonomous agents. Home of AnswerRank, AM-MQM and semantic distributed caching.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
-    
+
     <style>
         * {
             margin: 0;
@@ -243,11 +243,6 @@
             margin-bottom: 1rem;
         }
 
-        .research-card .badge.progress {
-            background: rgba(251, 191, 36, 0.1);
-            color: #fbbf24;
-        }
-
         .research-card h3 {
             font-size: 1.5rem;
             margin-bottom: 0.75rem;
@@ -448,23 +443,18 @@
         /* Language Toggle Content */
         [data-lang="zh"] { display: none; }
         html[lang="zh"] [data-lang="en"] { display: none; }
-        html[lang="zh"] [data-lang="zh"] { display: block; }
-        html[lang="zh"] span[data-lang="zh"] { display: inline; }
+        html[lang="zh"] [data-lang="zh"] { display: inline; }
 
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 gap: 1rem;
             }
-            
-            .nav-links a:not(.lang-switch) {
-                display: none;
-            }
 
             .hero-buttons {
                 flex-direction: column;
                 width: 100%;
-                max-width: 300px;
+                max-width: 320px;
             }
 
             .btn {
@@ -485,14 +475,14 @@
         <div class="nav-container">
             <a href="#" class="logo">Soodoo</a>
             <div class="nav-links">
-                <a href="#research" data-lang="en">Research</a>
-                <a href="#research" data-lang="zh">研究</a>
-                <a href="#products" data-lang="en">Products</a>
-                <a href="#products" data-lang="zh">产品</a>
-                <a href="https://github.com/soodoo-labs" target="_blank">GitHub</a>
-                <div class="lang-switch">
-                    <button class="lang-btn active" onclick="setLang('en')">EN</button>
-                    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+                <!--<a href="#research" data-lang="en">Research</a>-->
+                <!--<a href="#research" data-lang="zh">研究</a>-->
+                <!--<a href="#products" data-lang="en">Products</a>-->
+                <!--<a href="#products" data-lang="zh">产品</a>-->
+                <!--<a href="https://github.com/soodoo-labs" target="_blank">GitHub</a>-->
+                <!--<div class="lang-switch">-->
+                    <button class="lang-btn active" onclick="setLang('en', this)">EN</button>
+                    <button class="lang-btn" onclick="setLang('zh', this)">中文</button>
                 </div>
             </div>
         </div>
@@ -505,213 +495,151 @@
             <span data-lang="en">Building for the Agent Era</span>
             <span data-lang="zh">构建 Agent 时代的基础设施</span>
         </div>
-        
+
         <h1>
             <span data-lang="en">Building the Knowledge Layer for Autonomous Agents</span>
             <span data-lang="zh">为自主 Agent 构建知识基础层</span>
         </h1>
-        
+
         <p class="subtitle">
             <span data-lang="en">We believe agents will become autonomous in 12–18 months. We are building the research, protocols, and open-source tools they will rely on.</span>
-            <span data-lang="zh">我们相信 Agent 将在 12-18 个月内实现自主化。我们正在构建他们所依赖的研究、协议和开源工具。</span>
+            <span data-lang="zh">我们相信 Agent 将在 12–18 个月内实现自主化。我们正在构建它们所依赖的研究、协议和开源工具。</span>
         </p>
-        
+
         <div class="hero-buttons">
-            <a href="#research" class="btn btn-primary">
-                <span data-lang="en">View Our Research</span>
-                <span data-lang="zh">查看我们的研究</span>
-                →
-            </a>
+            <!--<a href="#research" class="btn btn-primary">-->
+            <!--    <span data-lang="en">View Our Research</span>-->
+            <!--    <span data-lang="zh">查看我们的研究</span>-->
+            <!--    →-->
+            <!--</a>-->
             <a href="https://github.com/soodoo-labs" class="btn btn-secondary" target="_blank">
-                <span>GitHub</span>
+                GitHub
             </a>
         </div>
     </section>
 
     <!-- Research Section -->
-    <!-- <section id="research">
+    <section id="research">
         <div class="section-header">
             <h2>
                 <span data-lang="en">Research & Open Source</span>
                 <span data-lang="zh">研究与开源</span>
             </h2>
             <p>
-                <span data-lang="en">Our core algorithms and technical reports. All research is open-source under MIT license.</span>
-                <span data-lang="zh">我们的核心算法与技术报告。所有研究均以 MIT 协议开源。</span>
+                <span data-lang="en">Peer‑review ready technical reports and open algorithms that power the AnswerMe platform.</span>
+                <span data-lang="zh">在 AnswerMe 平台真实运行的核心算法与技术报告，面向同行评审和产业落地。</span>
             </p>
         </div>
 
         <div class="research-grid">
-            <!-- AnswerRank -->
+            <!-- Semantic Caching Architecture -->
             <div class="research-card">
-                <span class="badge">Technical Report</span>
-                <h3>AnswerRank</h3>
+                <span class="badge">Preprint · 2025‑11‑28</span>
+                <h3>
+                    <span data-lang="en">Semantic Distributed Caching Architecture for Large Language Models: A Multi-Layer Approach</span>
+                    <span data-lang="zh">面向大语言模型的语义分布式缓存架构：多层次方案</span>
+                </h3>
                 <p>
-                    <span data-lang="en">A multi-dimensional credit scoring framework for evaluating AI-generated content credibility. Combines call quality (ECR, DIR, QCR), time value (HLI, UA), and trust propagation metrics.</span>
-                    <span data-lang="zh">一种评估 AI 生成内容可信度的多维信用评分框架。结合调用质量（ECR、DIR、QCR）、时间价值（HLI、UA）和信任传递等 12 个维度指标。</span>
+                    <span data-lang="en">
+                        Large Language Model inference is a major computational and economic bottleneck. 
+                        This paper presents a three‑tier semantic distributed caching architecture for LLM 
+                        question‑answering systems: (1) a local user‑level LRU cache for personalized patterns, 
+                        (2) a distributed Redis cluster with semantic hash indexing for cross‑user deduplication, 
+                        and (3) a persistent knowledge graph store with vector‑based nearest‑neighbor search as 
+                        semantic fallback. The AM‑MQM multi‑vector question matching algorithm is integrated to 
+                        decide cache eligibility with 96% semantic accuracy. Deployed on the AnswerMe platform 
+                        with 1.2 million monthly queries, the system achieves a 78% cache hit rate, reduces API 
+                        costs by 91%, and cuts average latency from 2.3 seconds to 180 milliseconds for cache hits.
+                    </span>
+                    <span data-lang="zh">
+                        大模型推理的算力与成本压力日益增大。本文提出一个用于 LLM 问答系统的三层语义分布式缓存架构：
+                        (1) 用户级 LRU 本地缓存，捕获个性化模式；
+                        (2) 带语义哈希索引的分布式 Redis 集群，实现跨用户去重；
+                        (3) 结合向量近邻检索的持久化知识图谱存储，作为语义兜底。
+                        通过集成 AM‑MQM 多向量问题匹配算法，在 AnswerMe 线上每月 120 万查询场景下，
+                        缓存命中率达到 78%，API 成本降低 91%，命中请求平均延迟从 2.3 秒降至 180 毫秒。
+                    </span>
                 </p>
                 <div class="research-links">
-                    <a href="https://github.com/soodoo-labs/answerrank" target="_blank">📦 GitHub →</a>
-                    <a href="#" target="_blank">📄 Paper (Coming Soon)</a>
+                    <a href="https://zenodo.org/records/17752574" target="_blank">
+                        <span data-lang="en">Read preprint (v1.0.0)</span>
+                        <span data-lang="zh">查看预印本（v1.0.0）</span> →
+                    </a>
+                </div>
+            </div>
+
+            <!-- AnswerRank -->
+            <div class="research-card">
+                <span class="badge">Preprint · 2025‑11‑28</span>
+                <h3>
+                    <span data-lang="en">AnswerRank: A Multi-dimensional Credit Scoring Framework for Evaluating AI-Generated Content Credibility</span>
+                    <span data-lang="zh">AnswerRank：评估 AI 生成内容可信度的多维信用评分框架</span>
+                </h3>
+                <p>
+                    <span data-lang="en">
+                        AnswerRank is a twelve‑dimensional dynamic credit scoring framework for evaluating 
+                        AI‑generated content credibility at scale. It integrates four layers: Call Quality (40%), 
+                        Trust Propagation (30%), Temporal Value (20%), and Network Effect (10%), including a 
+                        novel Enterprise Endorsement Index (EEI) and a four‑layer anti‑gaming mechanism. 
+                        On a dataset of 5,000 AI‑generated answers, AnswerRank achieves 87% NDCG@10 in ranking 
+                        quality, outperforming simple voting (62%), time‑weighted voting (71%), and PageRank 
+                        variants (79%). Our anti‑gaming evaluation shows that manipulated answers experience 
+                        a 65% score reduction while legitimate answers remain stable within 5% variance.
+                    </span>
+                    <span data-lang="zh">
+                        AnswerRank 是一个面向大规模 AI 内容的十二维动态信用评分框架，
+                        由四个层级构成：调用质量（40%）、信任传递（30%）、时间价值（20%）和网络效应（10%）。
+                        框架提出企业背书指数（EEI），并设计四层反作弊机制。
+                        在包含 5,000 条 AI 生成答案的数据集上，AnswerRank 的 NDCG@10 达到 87%，
+                        显著优于简单投票（62%）、时间加权投票（71%）和 PageRank 变体（79%）。
+                        反作弊实验表明，被操纵答案平均降分 65%，正常答案的波动控制在 5% 以内。
+                    </span>
+                </p>
+                <div class="research-links">
+                    <a href="https://zenodo.org/records/17752478" target="_blank">
+                        <span data-lang="en">Read preprint (v1.0.0)</span>
+                        <span data-lang="zh">查看预印本（v1.0.0）</span> →
+                    </a>
+                    <!--<a href="https://github.com/soodoo-labs/answerrank" target="_blank">📦 GitHub →</a>-->
                 </div>
             </div>
 
             <!-- AM-MQM -->
             <div class="research-card">
-                <span class="badge">Tech Report 001</span>
-                <h3>AM-MQM</h3>
-                <p>
-                    <span data-lang="en">Multi-Vector Question Matching algorithm. Combines semantic similarity (45%), intent matching (20%), knowledge graph distance (20%), and normalization (15%) for question deduplication.</span>
-                    <span data-lang="zh">多向量问题匹配算法。结合语义相似度（45%）、意图匹配（20%）、知识图谱距离（20%）和规范化（15%），实现问题去重与缓存命中。</span>
-                </p>
-                <div class="research-links">
-                    <a href="https://github.com/soodoo-labs/am-mqm" target="_blank">📦 GitHub →</a>
-                    <a href="#" target="_blank">📄 Documentation</a>
-                </div>
-            </div>
-
-            <!-- Semantic Caching -->
-            <div class="research-card">
-                <span class="badge progress">In Progress</span>
+                <span class="badge">Preprint · 2025‑11‑28</span>
                 <h3>
-                    <span data-lang="en">Semantic Caching Architecture</span>
-                    <span data-lang="zh">语义缓存架构</span>
+                    <span data-lang="en">AM‑MQM: A Multi-Vector Question Matching Algorithm for Semantic Deduplication in AI Question-Answering Systems</span>
+                    <span data-lang="zh">AM‑MQM：面向 AI 问答系统语义去重的多向量问题匹配算法</span>
                 </h3>
                 <p>
-                    <span data-lang="en">A semantic-level caching system for LLM applications. Achieves 80%+ cache hit rate and reduces inference costs by 90%.</span>
-                    <span data-lang="zh">面向大语言模型应用的语义级缓存系统。实现 80%+ 缓存命中率，降低推理成本 90%。</span>
+                    <span data-lang="en">
+                        AM‑MQM (AnswerMe Multi‑Vector Question Matching) tackles question deduplication in 
+                        AI‑powered knowledge systems by fusing four signals: semantic embeddings (45%), 
+                        intent classification (20%), knowledge graph distance (20%), and scope normalization (15%). 
+                        A three‑bucket scheme (SAME, FAMILY, DIFFERENT) enables graduated cache utilization strategies. 
+                        Experiments demonstrate that AM‑MQM achieves 89.3% F1‑score on equivalence detection, 
+                        outperforming Sentence‑BERT (82.1%) and SimCSE (84.7%). Our deployed system achieves a 
+                        78% cache hit rate while maintaining 96% semantic accuracy, reducing API costs by 73%.
+                    </span>
+                    <span data-lang="zh">
+                        AM‑MQM（AnswerMe Multi‑Vector Question Matching）面向 AI 知识系统中的问题去重场景，
+                        综合四类信号：语义向量相似度（45%）、意图分类（20%）、知识图谱距离（20%）和范围归一化（15%）。
+                        算法提出 SAME / FAMILY / DIFFERENT 三桶策略，用于分级利用缓存。
+                        实验表明，在问题等价检测任务上 F1‑score 达到 89.3%，
+                        优于 Sentence‑BERT（82.1%）与 SimCSE（84.7%）。
+                        在线部署后，在保持 96% 语义准确率的同时，缓存命中率达到 78%，API 成本降低 73%。
+                    </span>
                 </p>
                 <div class="research-links">
-                    <a href="#">
-                        <span data-lang="en">🗓️ Roadmap Q1 2025</span>
-                        <span data-lang="zh">🗓️ 计划于 2025 Q1</span>
+                    <a href="https://zenodo.org/records/17752200" target="_blank">
+                        <span data-lang="en">Read preprint (v1.0.0)</span>
+                        <span data-lang="zh">查看预印本（v1.0.0）</span> →
                     </a>
+                    <!--<a href="https://github.com/soodoo-labs/am-mqm" target="_blank">📦 GitHub →</a>-->
                 </div>
             </div>
         </div>
-    </section> -->
-    <!-- Research Section -->
-<section id="research">
-    <div class="section-header">
-        <h2>
-            <span data-lang="en">Research & Open Source</span>
-            <span data-lang="zh">研究与开源</span>
-        </h2>
-        <p>
-            <span data-lang="en">Peer‑review ready technical reports and open algorithms that power the AnswerMe platform.</span>
-            <span data-lang="zh">在 AnswerMe 平台真实运行的核心算法与技术报告，面向同行评审和产业落地。</span>
-        </p>
-    </div>
-
-    <div class="research-grid">
-        <!-- Semantic Caching Architecture -->
-        <div class="research-card">
-            <span class="badge">Preprint · 2025‑11‑28</span>
-            <h3>
-                <span data-lang="en">Semantic Distributed Caching Architecture for Large Language Models: A Multi-Layer Approach</span>
-                <span data-lang="zh">面向大语言模型的语义分布式缓存架构：多层次方案</span>
-            </h3>
-            <p>
-                <span data-lang="en">
-                    Large Language Model inference is a major computational and economic bottleneck. 
-                    This paper presents a three‑tier semantic distributed caching architecture for LLM 
-                    question‑answering systems: (1) a local user‑level LRU cache for personalized patterns, 
-                    (2) a distributed Redis cluster with semantic hash indexing for cross‑user deduplication, 
-                    and (3) a persistent knowledge graph store with vector‑based nearest‑neighbor search as 
-                    semantic fallback. The AM‑MQM multi‑vector question matching algorithm is integrated to 
-                    decide cache eligibility with 96% semantic accuracy. Deployed on the AnswerMe platform 
-                    with 1.2 million monthly queries, the system achieves a 78% cache hit rate, reduces API 
-                    costs by 91%, and cuts average latency from 2.3 seconds to 180 milliseconds for cache hits.
-                </span>
-                <span data-lang="zh">
-                    大模型推理的算力与成本压力日益增大。本文提出一个用于 LLM 问答系统的三层语义分布式缓存架构：
-                    (1) 用户级 LRU 本地缓存，捕获个性化模式；
-                    (2) 带语义哈希索引的分布式 Redis 集群，实现跨用户去重；
-                    (3) 结合向量近邻检索的持久化知识图谱存储，作为语义兜底。
-                    通过集成 AM‑MQM 多向量问题匹配算法，在 AnswerMe 线上每月 120 万查询场景下，
-                    缓存命中率达到 78%，API 成本降低 91%，命中请求平均延迟从 2.3 秒降至 180 毫秒。
-                </span>
-            </p>
-            <div class="research-links">
-                <a href="https://zenodo.org/records/17752574" target="_blank">
-                    <span data-lang="en">Read preprint (v1.0.0)</span>
-                    <span data-lang="zh">查看预印本（v1.0.0）</span> →
-                </a>
-            </div>
-        </div>
-
-        <!-- AnswerRank -->
-        <div class="research-card">
-            <span class="badge">Preprint · 2025‑11‑28</span>
-            <h3>
-                <span data-lang="en">AnswerRank: A Multi-dimensional Credit Scoring Framework for Evaluating AI-Generated Content Credibility</span>
-                <span data-lang="zh">AnswerRank：评估 AI 生成内容可信度的多维信用评分框架</span>
-            </h3>
-            <p>
-                <span data-lang="en">
-                    AnswerRank is a twelve‑dimensional dynamic credit scoring framework for evaluating 
-                    AI‑generated content credibility at scale. It integrates four layers: Call Quality (40%), 
-                    Trust Propagation (30%), Temporal Value (20%), and Network Effect (10%), including a 
-                    novel Enterprise Endorsement Index (EEI) and a four‑layer anti‑gaming mechanism. 
-                    On a dataset of 5,000 AI‑generated answers, AnswerRank achieves 87% NDCG@10 in ranking 
-                    quality, outperforming simple voting (62%), time‑weighted voting (71%), and PageRank 
-                    variants (79%). Our anti‑gaming evaluation shows that manipulated answers experience 
-                    a 65% score reduction while legitimate answers remain stable within 5% variance.
-                </span>
-                <span data-lang="zh">
-                    AnswerRank 是一个面向大规模 AI 内容的十二维动态信用评分框架，
-                    由四个层级构成：调用质量（40%）、信任传递（30%）、时间价值（20%）和网络效应（10%）。
-                    框架提出企业背书指数（EEI），并设计四层反作弊机制。
-                    在包含 5,000 条 AI 生成答案的数据集上，AnswerRank 的 NDCG@10 达到 87%，
-                    显著优于简单投票（62%）、时间加权投票（71%）和 PageRank 变体（79%）。
-                    反作弊实验表明，被操纵答案平均降分 65%，正常答案的波动控制在 5% 以内。
-                </span>
-            </p>
-            <div class="research-links">
-                <a href="https://zenodo.org/records/17752478" target="_blank">
-                    <span data-lang="en">Read preprint (v1.0.0)</span>
-                    <span data-lang="zh">查看预印本（v1.0.0）</span> →
-                </a>
-                <a href="https://github.com/soodoo-labs/answerrank" target="_blank">📦 GitHub →</a>
-            </div>
-        </div>
-
-        <!-- AM-MQM -->
-        <div class="research-card">
-            <span class="badge">Preprint · 2025‑11‑28</span>
-            <h3>
-                <span data-lang="en">AM‑MQM: A Multi-Vector Question Matching Algorithm for Semantic Deduplication in AI Question-Answering Systems</span>
-                <span data-lang="zh">AM‑MQM：面向 AI 问答系统语义去重的多向量问题匹配算法</span>
-            </h3>
-            <p>
-                <span data-lang="en">
-                    AM‑MQM (AnswerMe Multi‑Vector Question Matching) tackles question deduplication in 
-                    AI‑powered knowledge systems by fusing four signals: semantic embeddings (45%), 
-                    intent classification (20%), knowledge graph distance (20%), and scope normalization (15%). 
-                    A three‑bucket scheme (SAME, FAMILY, DIFFERENT) enables graduated cache utilization strategies. 
-                    Experiments demonstrate that AM‑MQM achieves 89.3% F1‑score on equivalence detection, 
-                    outperforming Sentence‑BERT (82.1%) and SimCSE (84.7%). Our deployed system achieves a 
-                    78% cache hit rate while maintaining 96% semantic accuracy, reducing API costs by 73%.
-                </span>
-                <span data-lang="zh">
-                    AM‑MQM（AnswerMe Multi‑Vector Question Matching）面向 AI 知识系统中的问题去重场景，
-                    综合四类信号：语义向量相似度（45%）、意图分类（20%）、知识图谱距离（20%）和范围归一化（15%）。
-                    算法提出 SAME / FAMILY / DIFFERENT 三桶策略，用于分级利用缓存。
-                    实验表明，在问题等价检测任务上 F1‑score 达到 89.3%，
-                    优于 Sentence‑BERT（82.1%）与 SimCSE（84.7%）。
-                    在线部署后，在保持 96% 语义准确率的同时，缓存命中率达到 78%，API 成本降低 73%。
-                </span>
-            </p>
-            <div class="research-links">
-                <a href="https://zenodo.org/records/17752200" target="_blank">
-                    <span data-lang="en">Read preprint (v1.0.0)</span>
-                    <span data-lang="zh">查看预印本（v1.0.0）</span> →
-                </a>
-                <a href="https://github.com/soodoo-labs/am-mqm" target="_blank">📦 GitHub →</a>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Products Section -->
     <section id="products">
@@ -734,7 +662,7 @@
                 <div class="domain">answerme.wiki</div>
                 <p>
                     <span data-lang="en">AI Answer Memory & Encyclopedia. Save, organize, and reuse AI conversations. Build your personal knowledge base.</span>
-                    <span data-lang="zh">AI 答案记忆层与百科。存答案、用答案、AI 百科 —— 构建个人知识库。</span>
+                    <span data-lang="zh">AI 答案记忆层与百科。存答案、用答案、AI 百科 —— 构建个人知识基础设施。</span>
                 </p>
                 <span class="status live">Live</span>
             </div>
@@ -809,7 +737,7 @@
                 <span data-lang="zh">全球布局</span>
             </h2>
             <p>
-                <span data-lang="en">A research-driven AI company with offices in UK and China.</span>
+                <span data-lang="en">A research-driven AI company with offices in the UK and China.</span>
                 <span data-lang="zh">研究驱动的 AI 公司，在英国和中国设有办公室。</span>
             </p>
         </div>
@@ -848,12 +776,9 @@
                         <span data-lang="en">Research</span>
                         <span data-lang="zh">研究</span>
                     </h4>
-                    <a href="https://github.com/soodoo-labs/answerrank" target="_blank">AnswerRank</a>
-                    <a href="https://github.com/soodoo-labs/am-mqm" target="_blank">AM-MQM</a>
-                    <a href="https://github.com/soodoo-labs" target="_blank">
-                        <span data-lang="en">All Repositories</span>
-                        <span data-lang="zh">所有仓库</span>
-                    </a>
+                    <a href="https://zenodo.org/records/17752574" target="_blank">Semantic Caching</a>
+                    <a href="https://zenodo.org/records/17752478" target="_blank">AnswerRank</a>
+                    <a href="https://zenodo.org/records/17752200" target="_blank">AM‑MQM</a>
                 </div>
 
                 <div class="footer-col">
@@ -861,29 +786,27 @@
                         <span data-lang="en">Products</span>
                         <span data-lang="zh">产品</span>
                     </h4>
-                    <a href="https://answerme.wiki" target="_blank">AnswerMe</a>
-                    <a href="https://ticketbridge.art" target="_blank">TicketBridge</a>
-                    <a href="https://firststep.click" target="_blank">FirstStep</a>
+                    <a href="https://answerme.wiki" target="_blank">AnswerMe</a> 
                 </div>
 
-                <div class="footer-col">
-                    <h4>
-                        <span data-lang="en">Company</span>
-                        <span data-lang="zh">公司</span>
-                    </h4>
-                    <a href="#company">
-                        <span data-lang="en">About</span>
-                        <span data-lang="zh">关于我们</span>
-                    </a>
-                    <a href="mailto:hello@soodoo.cc">
-                        <span data-lang="en">Contact</span>
-                        <span data-lang="zh">联系我们</span>
-                    </a>
-                    <a href="mailto:research@soodoo.cc">
-                        <span data-lang="en">Research Collaboration</span>
-                        <span data-lang="zh">研究合作</span>
-                    </a>
-                </div>
+                <!--<div class="footer-col">-->
+                <!--    <h4>-->
+                <!--        <span data-lang="en">Company</span>-->
+                <!--        <span data-lang="zh">公司</span>-->
+                <!--    </h4>-->
+                <!--    <a href="#company">-->
+                <!--        <span data-lang="en">About</span>-->
+                <!--        <span data-lang="zh">关于我们</span>-->
+                <!--    </a>-->
+                <!--    <a href="mailto:hello@soodoo.cc">-->
+                <!--        <span data-lang="en">Contact</span>-->
+                <!--        <span data-lang="zh">联系我们</span>-->
+                <!--    </a>-->
+                <!--    <a href="mailto:research@soodoo.cc">-->
+                <!--        <span data-lang="en">Research Collaboration</span>-->
+                <!--        <span data-lang="zh">研究合作</span>-->
+                <!--    </a>-->
+                <!--</div>-->
 
                 <div class="footer-col">
                     <h4>
@@ -891,56 +814,57 @@
                         <span data-lang="zh">关注</span>
                     </h4>
                     <a href="https://github.com/soodoo-labs" target="_blank">GitHub</a>
-                    <!--<a href="https://twitter.com/soodoo" target="_blank">Twitter / X</a>-->
-                    <!--<a href="https://linkedin.com/company/soodoo" target="_blank">LinkedIn</a>-->
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>© 2025 Soodoo Ltd. All rights reserved.</p>
-                <div class="social-links">
-                </div>
-            </div>
+            <!--<div class="footer-bottom">-->
+            <!--    <p>© 2025 Soodoo Ltd. All rights reserved.</p>-->
+            <!--    <div class="social-links">-->
+            <!--        <a href="mailto:hello@soodoo.cc">hello@soodoo.cc</a>-->
+            <!--        <a href="mailto:research@soodoo.cc">research@soodoo.cc</a>-->
+            <!--    </div>-->
+            <!--</div>-->
         </div>
     </footer>
 
-    <!-- Language Switcher Script -->
+    <!-- Scripts -->
     <script>
-        function setLang(lang) {
+        function setLang(lang, btn) {
             document.documentElement.lang = lang;
-            
-            // Update button states
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
+
+            document.querySelectorAll('.lang-btn').forEach(function (b) {
+                b.classList.toggle('active', b === btn);
             });
-            event.target.classList.add('active');
-            
-            // Save preference
+
             localStorage.setItem('soodoo-lang', lang);
         }
 
-        // Load saved language preference
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('soodoo-lang');
-            if (savedLang) {
+        document.addEventListener('DOMContentLoaded', function () {
+            var savedLang = localStorage.getItem('soodoo-lang');
+            if (savedLang === 'zh' || savedLang === 'en') {
                 document.documentElement.lang = savedLang;
-                document.querySelectorAll('.lang-btn').forEach(btn => {
-                    btn.classList.toggle('active', 
-                        (savedLang === 'zh' && btn.textContent === '中文') ||
-                        (savedLang === 'en' && btn.textContent === 'EN')
+                document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                    var isZh = btn.textContent.trim() === '中文';
+                    var isEn = btn.textContent.trim() === 'EN';
+                    btn.classList.toggle('active',
+                        (savedLang === 'zh' && isZh) ||
+                        (savedLang === 'en' && isEn)
                     );
                 });
             }
-        });
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+            // Smooth scroll for internal anchors
+            document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                anchor.addEventListener('click', function (e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId.length > 1) {
+                        e.preventDefault();
+                        var target = document.querySelector(targetId);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
             });
         });
     </script>
