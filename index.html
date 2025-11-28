@@ -529,7 +529,7 @@
     </section>
 
     <!-- Research Section -->
-    <section id="research">
+    <!-- <section id="research">
         <div class="section-header">
             <h2>
                 <span data-lang="en">Research & Open Source</span>
@@ -589,7 +589,129 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+    <!-- Research Section -->
+<section id="research">
+    <div class="section-header">
+        <h2>
+            <span data-lang="en">Research & Open Source</span>
+            <span data-lang="zh">研究与开源</span>
+        </h2>
+        <p>
+            <span data-lang="en">Peer‑review ready technical reports and open algorithms that power the AnswerMe platform.</span>
+            <span data-lang="zh">在 AnswerMe 平台真实运行的核心算法与技术报告，面向同行评审和产业落地。</span>
+        </p>
+    </div>
+
+    <div class="research-grid">
+        <!-- Semantic Caching Architecture -->
+        <div class="research-card">
+            <span class="badge">Preprint · 2025‑11‑28</span>
+            <h3>
+                <span data-lang="en">Semantic Distributed Caching Architecture for Large Language Models: A Multi-Layer Approach</span>
+                <span data-lang="zh">面向大语言模型的语义分布式缓存架构：多层次方案</span>
+            </h3>
+            <p>
+                <span data-lang="en">
+                    Large Language Model inference is a major computational and economic bottleneck. 
+                    This paper presents a three‑tier semantic distributed caching architecture for LLM 
+                    question‑answering systems: (1) a local user‑level LRU cache for personalized patterns, 
+                    (2) a distributed Redis cluster with semantic hash indexing for cross‑user deduplication, 
+                    and (3) a persistent knowledge graph store with vector‑based nearest‑neighbor search as 
+                    semantic fallback. The AM‑MQM multi‑vector question matching algorithm is integrated to 
+                    decide cache eligibility with 96% semantic accuracy. Deployed on the AnswerMe platform 
+                    with 1.2 million monthly queries, the system achieves a 78% cache hit rate, reduces API 
+                    costs by 91%, and cuts average latency from 2.3 seconds to 180 milliseconds for cache hits.
+                </span>
+                <span data-lang="zh">
+                    大模型推理的算力与成本压力日益增大。本文提出一个用于 LLM 问答系统的三层语义分布式缓存架构：
+                    (1) 用户级 LRU 本地缓存，捕获个性化模式；
+                    (2) 带语义哈希索引的分布式 Redis 集群，实现跨用户去重；
+                    (3) 结合向量近邻检索的持久化知识图谱存储，作为语义兜底。
+                    通过集成 AM‑MQM 多向量问题匹配算法，在 AnswerMe 线上每月 120 万查询场景下，
+                    缓存命中率达到 78%，API 成本降低 91%，命中请求平均延迟从 2.3 秒降至 180 毫秒。
+                </span>
+            </p>
+            <div class="research-links">
+                <a href="https://zenodo.org/records/17752574" target="_blank">
+                    <span data-lang="en">Read preprint (v1.0.0)</span>
+                    <span data-lang="zh">查看预印本（v1.0.0）</span> →
+                </a>
+            </div>
+        </div>
+
+        <!-- AnswerRank -->
+        <div class="research-card">
+            <span class="badge">Preprint · 2025‑11‑28</span>
+            <h3>
+                <span data-lang="en">AnswerRank: A Multi-dimensional Credit Scoring Framework for Evaluating AI-Generated Content Credibility</span>
+                <span data-lang="zh">AnswerRank：评估 AI 生成内容可信度的多维信用评分框架</span>
+            </h3>
+            <p>
+                <span data-lang="en">
+                    AnswerRank is a twelve‑dimensional dynamic credit scoring framework for evaluating 
+                    AI‑generated content credibility at scale. It integrates four layers: Call Quality (40%), 
+                    Trust Propagation (30%), Temporal Value (20%), and Network Effect (10%), including a 
+                    novel Enterprise Endorsement Index (EEI) and a four‑layer anti‑gaming mechanism. 
+                    On a dataset of 5,000 AI‑generated answers, AnswerRank achieves 87% NDCG@10 in ranking 
+                    quality, outperforming simple voting (62%), time‑weighted voting (71%), and PageRank 
+                    variants (79%). Our anti‑gaming evaluation shows that manipulated answers experience 
+                    a 65% score reduction while legitimate answers remain stable within 5% variance.
+                </span>
+                <span data-lang="zh">
+                    AnswerRank 是一个面向大规模 AI 内容的十二维动态信用评分框架，
+                    由四个层级构成：调用质量（40%）、信任传递（30%）、时间价值（20%）和网络效应（10%）。
+                    框架提出企业背书指数（EEI），并设计四层反作弊机制。
+                    在包含 5,000 条 AI 生成答案的数据集上，AnswerRank 的 NDCG@10 达到 87%，
+                    显著优于简单投票（62%）、时间加权投票（71%）和 PageRank 变体（79%）。
+                    反作弊实验表明，被操纵答案平均降分 65%，正常答案的波动控制在 5% 以内。
+                </span>
+            </p>
+            <div class="research-links">
+                <a href="https://zenodo.org/records/17752478" target="_blank">
+                    <span data-lang="en">Read preprint (v1.0.0)</span>
+                    <span data-lang="zh">查看预印本（v1.0.0）</span> →
+                </a>
+                <a href="https://github.com/soodoo-labs/answerrank" target="_blank">📦 GitHub →</a>
+            </div>
+        </div>
+
+        <!-- AM-MQM -->
+        <div class="research-card">
+            <span class="badge">Preprint · 2025‑11‑28</span>
+            <h3>
+                <span data-lang="en">AM‑MQM: A Multi-Vector Question Matching Algorithm for Semantic Deduplication in AI Question-Answering Systems</span>
+                <span data-lang="zh">AM‑MQM：面向 AI 问答系统语义去重的多向量问题匹配算法</span>
+            </h3>
+            <p>
+                <span data-lang="en">
+                    AM‑MQM (AnswerMe Multi‑Vector Question Matching) tackles question deduplication in 
+                    AI‑powered knowledge systems by fusing four signals: semantic embeddings (45%), 
+                    intent classification (20%), knowledge graph distance (20%), and scope normalization (15%). 
+                    A three‑bucket scheme (SAME, FAMILY, DIFFERENT) enables graduated cache utilization strategies. 
+                    Experiments demonstrate that AM‑MQM achieves 89.3% F1‑score on equivalence detection, 
+                    outperforming Sentence‑BERT (82.1%) and SimCSE (84.7%). Our deployed system achieves a 
+                    78% cache hit rate while maintaining 96% semantic accuracy, reducing API costs by 73%.
+                </span>
+                <span data-lang="zh">
+                    AM‑MQM（AnswerMe Multi‑Vector Question Matching）面向 AI 知识系统中的问题去重场景，
+                    综合四类信号：语义向量相似度（45%）、意图分类（20%）、知识图谱距离（20%）和范围归一化（15%）。
+                    算法提出 SAME / FAMILY / DIFFERENT 三桶策略，用于分级利用缓存。
+                    实验表明，在问题等价检测任务上 F1‑score 达到 89.3%，
+                    优于 Sentence‑BERT（82.1%）与 SimCSE（84.7%）。
+                    在线部署后，在保持 96% 语义准确率的同时，缓存命中率达到 78%，API 成本降低 73%。
+                </span>
+            </p>
+            <div class="research-links">
+                <a href="https://zenodo.org/records/17752200" target="_blank">
+                    <span data-lang="en">Read preprint (v1.0.0)</span>
+                    <span data-lang="zh">查看预印本（v1.0.0）</span> →
+                </a>
+                <a href="https://github.com/soodoo-labs/am-mqm" target="_blank">📦 GitHub →</a>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Products Section -->
     <section id="products">
